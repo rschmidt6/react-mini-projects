@@ -50,3 +50,5 @@ export default App;
 
 // Stopwatch/Timer
 // Basic start/stop reset functions
+
+//one component per project, or at least just one folder
