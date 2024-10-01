@@ -1,6 +1,6 @@
 import "./App.css";
-import CalcComponent from "./components/calculator";
-import TodoComponent from "./components/todo";
+import CalcComponent from "./components/Calculator";
+import TodoComponent from "./components/Todo";
 
 function App() {
   return (
@@ -51,4 +51,4 @@ export default App;
 // Stopwatch/Timer
 // Basic start/stop reset functions
 
-//one component per project, or at least just one folder
+//one component per project, or at least just one
