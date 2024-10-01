@@ -5,8 +5,8 @@ import TodoComponent from "./components/Todo";
 function App() {
   return (
     <>
-      <CalcComponent></CalcComponent>
       <TodoComponent></TodoComponent>
+      <CalcComponent></CalcComponent>
     </>
   );
 }

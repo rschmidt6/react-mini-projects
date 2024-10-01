@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Calculator.css";
+import styles from "./Calculator.module.css";
 
 function CalcComponent() {
   const [value, setValue] = useState("");
@@ -71,24 +71,20 @@ function CalcComponent() {
   };
 
   return (
-    <div className="calculator">
+    <div className={styles.calculator}>
       <NumberInput value={value} onChange={handleChange} />
-      <div className="calculator-buttons">
-        <div>
-          {[...Array(10)].map((_, index) => (
-            <NumberButton key={index} onAppend={appendToValue} number={index} />
-          ))}
-        </div>
-        <OperationAdder
-          operation="+"
-          onConcatenate={concatenateValue}
-          valueToConcatenate={value}
-        />
-        <OperationAdder operation="-" onConcatenate={concatenateValue} />
-        <OperationAdder operation="*" onConcatenate={concatenateValue} />
+      <div className={styles.calculatorButtons}>
+        <ClearButton onClear={handleClear} />
         <OperationAdder operation="/" onConcatenate={concatenateValue} />
-        <EqualsButton onCalculate={handleCalculate}></EqualsButton>
-        <ClearButton onClear={handleClear}></ClearButton>{" "}
+        <OperationAdder operation="*" onConcatenate={concatenateValue} />
+        <OperationAdder operation="-" onConcatenate={concatenateValue} />
+        {[7, 8, 9, 4, 5, 6, 1, 2, 3].map((num) => (
+          <NumberButton key={num} onAppend={appendToValue} number={num} />
+        ))}
+        <NumberButton onAppend={appendToValue} number={0} />
+        <OperationAdder operation="." onConcatenate={concatenateValue} />
+        <OperationAdder operation="+" onConcatenate={concatenateValue} />
+        <EqualsButton onCalculate={handleCalculate} />
       </div>
     </div>
   );
@@ -96,13 +92,13 @@ function CalcComponent() {
 
 function NumberInput({ value, onChange }) {
   return (
-    <div className="calculator-display">
+    <div className={styles.calculatorDisplay}>
       <input
         id="numberInput"
         type="text"
         value={value}
         onChange={onChange}
-        placeholder="Start Calculating :-)"
+        placeholder="Calculator :-)"
       />
     </div>
   );
@@ -110,7 +106,11 @@ function NumberInput({ value, onChange }) {
 
 function NumberButton({ number, onAppend }) {
   return (
-    <button className="number-button" onClick={() => onAppend(number)}>
+    <button
+      className={styles.numberButton}
+      onClick={() => onAppend(number)}
+      data-number={number}
+    >
       {number}
     </button>
   );
@@ -119,7 +119,7 @@ function NumberButton({ number, onAppend }) {
 function OperationAdder({ operation, onConcatenate }) {
   return (
     <button
-      className="operation-button"
+      className={styles.operationButton}
       onClick={() => onConcatenate(operation)}
     >
       {operation}
@@ -129,7 +129,7 @@ function OperationAdder({ operation, onConcatenate }) {
 
 function ClearButton({ onClear }) {
   return (
-    <button className="clear-button" onClick={() => onClear()}>
+    <button className={styles.clearButton} onClick={() => onClear()}>
       C
     </button>
   );
@@ -137,7 +137,7 @@ function ClearButton({ onClear }) {
 
 function EqualsButton({ onCalculate }) {
   return (
-    <button className="equals-button" onClick={() => onCalculate()}>
+    <button className={styles.equalsButton} onClick={() => onCalculate()}>
       =
     </button>
   );

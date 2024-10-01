@@ -1,5 +1,5 @@
 .calculator {
-  width: 300px;
+  width: 240px;
   margin: 0 auto;
   background-color: #f0f0f0;
   border-radius: 10px;
@@ -7,23 +7,30 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.calculator-display {
+.calculatorDisplay {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
-  text-align: right;
-  font-size: 24px;
 }
 
-.calculator-buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+.calculatorDisplay input {
+  width: 100%;
+  font-size: 24px;
+  text-align: right;
+  border: none;
+  background: transparent;
+}
+
+.calculatorButtons {
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
-button {
+.button {
+  flex: 1 0 21%;
   padding: 15px;
   font-size: 18px;
   border: none;
@@ -32,37 +39,45 @@ button {
   transition: background-color 0.3s;
 }
 
-.number-button {
+.numberButton {
+  composes: button;
   background-color: #e0e0e0;
 }
 
-.number-button:hover {
+.numberButton:hover {
   background-color: #d0d0d0;
 }
 
-.operation-button {
+.numberButton[data-number="0"] {
+  flex: 2 0 46%;
+}
+
+.operationButton {
+  composes: button;
   background-color: #ff9800;
   color: white;
 }
 
-.operation-button:hover {
+.operationButton:hover {
   background-color: #f57c00;
 }
 
-.clear-button {
+.clearButton {
+  composes: button;
   background-color: #f44336;
   color: white;
 }
 
-.clear-button:hover {
+.clearButton:hover {
   background-color: #d32f2f;
 }
 
-.equals-button {
+.equalsButton {
+  composes: button;
   background-color: #4caf50;
   color: white;
 }
 
-.equals-button:hover {
+.equalsButton:hover {
   background-color: #45a049;
 }
