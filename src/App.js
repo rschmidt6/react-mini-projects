@@ -7,6 +7,7 @@ import WeatherWidgetComponent from "./components/WeatherWidget";
 function App() {
   return (
     <>
+      <WeatherWidgetComponent></WeatherWidgetComponent>
       <TodoComponent></TodoComponent>
       <CalcComponent></CalcComponent>
       <NumberGuesserComponent></NumberGuesserComponent>
@@ -17,21 +18,6 @@ function App() {
 export default App;
 
 //12 Beginner Projects:
-
-// To-Do List Application
-// A simple app to add, remove, and mark tasks as complete.
-
-// Calculator
-// Start with basic arithmetic and gradually add more complex operations.
-
-// Number Guessing Game
-// Create a game where the computer generates a random number and the user tries to guess it.
-
-// Weather App
-// Use a free weather API to display current weather conditions for a given location.
-
-// Personal Portfolio Website
-// Showcase your projects and skills with a simple HTML/CSS website.
 
 // Tic-Tac-Toe Game
 // Implement the classic game with a simple UI.
@@ -48,11 +34,14 @@ export default App;
 // Rock Paper Scissors Game
 // Implement the classic game against a computer opponent.
 
+// Stopwatch/Timer
+// Basic start/stop reset functions
+
 // Simple Blog System
 // Create a basic blog where users can create, read, update, and delete posts.
 
-// Stopwatch/Timer
-// Basic start/stop reset functions
+// Personal Portfolio Website
+// Showcase your projects and skills with a simple HTML/CSS website.
 
 //one component per project, or at least just one
 
