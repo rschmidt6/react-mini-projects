@@ -3,6 +3,7 @@ import CalcComponent from "./components/Calculator";
 import TodoComponent from "./components/Todo";
 import NumberGuesserComponent from "./components/NumberGuesser";
 import WeatherWidgetComponent from "./components/WeatherWidget";
+import TicTacToeComponent from "./components/TicTacToe";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <TodoComponent></TodoComponent>
       <CalcComponent></CalcComponent>
       <NumberGuesserComponent></NumberGuesserComponent>
+      <TicTacToeComponent></TicTacToeComponent>
     </>
   );
 }
